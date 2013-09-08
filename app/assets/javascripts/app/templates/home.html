@@ -1,0 +1,31 @@
+<div class="jumbotron">
+  <h1>Create new user</h1>
+  <form role="form">
+  	<div class="form-group">
+    <label for="first_name">First Name</label>
+    <input type="text" class="form-control" id="first_name" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input type="text" class="form-control" id="last_name" placeholder="Last name">
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="text" class="form-control" id="age" placeholder="Age">
+  </div>
+  </form>
+  <p><a class="btn btn-lg btn-success" id="add_user" href="#">Add user</a></p>
+</div>
+
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>Existing users</h4>
+    <% console.log(users) %>
+    <ul>
+    	<% _.each(users, function(user){ %>
+    		<li><%= user.attributes.first_name %> <%= user.attributes.last_name %>, <%= user.attributes.age %></li>
+    	<% }) %>
+    </ul>
+  </div>
+</div>
