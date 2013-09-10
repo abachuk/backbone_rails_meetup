@@ -1,4 +1,4 @@
-define(['backbone', 'views/HomeView'], function(Backbone, HomeView){
+define(['backbone', 'views/HomeView', 'views/AboutView'], function(Backbone, HomeView, AboutView){
 	App.Router = Backbone.Router.extend({
 		
 		initialize: function(){
@@ -6,11 +6,16 @@ define(['backbone', 'views/HomeView'], function(Backbone, HomeView){
 			Backbone.history.start();
 		},
 		routes: {
-			'': 'home'
+			'': 'home',
+			'about': 'about'
 		},
 
 		'home': function(){
 			new HomeView();
+		},
+
+		'about': function(){
+			new AboutView();
 		}
 	
 	});
