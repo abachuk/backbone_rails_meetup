@@ -24,7 +24,7 @@
     <% console.log(users) %>
     <ul>
     	<% _.each(users, function(user){ %>
-    		<li><%= user.attributes.first_name %> <%= user.attributes.last_name %>, <%= user.attributes.age %> <a href="#" class="btn btn-xs btn-danger" style="color:#fff;">Delete</a></li>
+    		<li id="<%= user.cid %>"><%= user.attributes.first_name %> <%= user.attributes.last_name %>, <%= user.attributes.age %> <a href="#" class="btn btn-xs btn-danger delete" style="color:#fff;">Delete</a></li>
     	<% }) %>
     </ul>
   </div>

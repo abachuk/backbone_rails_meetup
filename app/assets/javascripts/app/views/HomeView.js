@@ -4,7 +4,8 @@ define(['backbone', 'collections/users', 'models/user', 'text!templates/home.htm
 		el: '#container',
 	
 		events: {
-			'click #add_user': 'adduser'
+			'click #add_user': 'adduser',
+			'click .delete': 'delete'
 		},
 
 		initialize: function(){
@@ -12,8 +13,9 @@ define(['backbone', 'collections/users', 'models/user', 'text!templates/home.htm
 			this.collection = new Users();
 			this.model = user;
 			this.collection.fetch({reset: true});
-			this.collection.on('reset', this.render);
-			this.collection.bind('add', this.render);
+			//this.collection.on('reset', this.render);
+			//this.collection.bind('add', this.render);
+			this.collection.bind('all', this.render);
 			console.log(this.collection);
 			//this.render();
 		},
@@ -37,6 +39,15 @@ define(['backbone', 'collections/users', 'models/user', 'text!templates/home.htm
 			});
 			//this.model.sync();
 			console.log('add user fired');
+		},
+
+		delete: function(e){
+			var clickedID = $(e.currentTarget).parent().attr('id');
+			var user = this.collection.get(clickedID);
+			user.destroy();
+			this.collection.remove(clickedID);
+
+			console.log(user);
 		}
 
 	});
