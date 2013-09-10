@@ -11,7 +11,7 @@
   </div>
   <div class="form-group">
     <label for="age">Age</label>
-    <input type="text" class="form-control" id="age" placeholder="Age">
+    <input type="number" class="form-control" id="age" placeholder="Age">
   </div>
   </form>
   <p><a class="btn btn-lg btn-success" id="add_user" href="#">Add user</a></p>
@@ -22,7 +22,7 @@
   <div class="col-lg-6">
     <h4>Existing users</h4>
     <% console.log(users) %>
-    <ul>
+    <ul class="all-users">
     	<% _.each(users, function(user){ %>
     		<li id="<%= user.cid %>"><%= user.attributes.first_name %> <%= user.attributes.last_name %>, <%= user.attributes.age %> <a href="#" class="btn btn-xs btn-danger delete" style="color:#fff;">Delete</a></li>
     	<% }) %>

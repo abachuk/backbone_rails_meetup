@@ -16,3 +16,22 @@
 	max-width: 700px;
 	margin: 0 auto;
 }
+
+.header {
+	overflow: hidden;
+	margin: 20px 0;
+}
+
+.all-users li {
+	overflow: hidden;
+	padding: 7px 2px;
+	font-size: 1.2em;
+}
+
+.all-users li:nth-child(odd) {
+	background: #eee;
+}
+
+.all-users li .btn {
+	float: right;
+}
